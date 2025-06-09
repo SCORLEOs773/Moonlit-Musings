@@ -2,6 +2,10 @@
   "name": "moonlit-musings",
   "version": "0.0.0",
   "scripts": {
+    "build:client": "ng build --configuration production",
+    "build:server": "ng run moonlit-musings:server:production",
+    "build:ssr": "npm run build:client && npm run build:server",
+    "start:ssr": "node dist/moonlit-musings/server/main.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
