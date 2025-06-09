@@ -23,4 +23,8 @@ export class HomeComponent {
       queryParams: { genre: genre.toLowerCase() },
     });
   }
+
+  goToInstagram() {
+    window.open('https://www.instagram.com/__.skull_candy.__/', '_blank');
+  }
 }

@@ -128,3 +128,61 @@
     }
   }
 }
+
+.about-me-section {
+  padding: 4rem 2rem;
+  background-color: #161616; // match dark theme
+  background: linear-gradient(to right, #111111, #1b1b1b);
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .about-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .about-content {
+    max-width: 600px;
+    color: #e0e0e0; // readable text on dark bg
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #cccccc;
+    }
+
+    .insta-button {
+      background-color: #e1306c;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: #c92b61;
+      }
+    }
+  }
+}
