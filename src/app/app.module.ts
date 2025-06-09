@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +12,12 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { AngularFireModule } from '@angular/fire/compat'; // Using compat since you prefer classic style
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,15 +27,16 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     LoginComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,51 @@
+.poem-list {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .poem-card {
+    background: #1a1a1a;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.2rem;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #aaa;
+
+      .genre {
+        font-style: italic;
+      }
+
+      .likes {
+        color: #e81cff;
+      }
+    }
+  }
+}

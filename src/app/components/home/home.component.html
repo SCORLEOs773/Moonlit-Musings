@@ -1,0 +1,27 @@
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Moonlit Musings</h1>
+    <p class="tagline">Whispers from the midnight mind.</p>
+    <a class="cta-button" routerLink="/poems">Read Poems</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Sukhad Sharma — a poet, a thinker, and a dreamer. I write the unsaid.
+      These poems are fragments of moments that never made it to conversation.
+    </p>
+  </section>
+
+  <!-- Genre Filter Section -->
+  <section class="genres">
+    <h2>Explore by Theme</h2>
+    <div class="genre-grid">
+      <div class="card" *ngFor="let genre of genres" (click)="goToGenre(genre)">
+        <p class="heading">{{ genre }}</p>
+      </div>
+    </div>
+  </section>
+</div>

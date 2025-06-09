@@ -1,1 +1,12 @@
-<p>poem-detail works!</p>
+<div class="poem-detail" *ngIf="poem">
+  <h2>{{ poem.title }}</h2>
+  <p class="genre">{{ poem.genre }}</p>
+
+  <div class="poem-content">
+    <div class="paragraph" *ngFor="let paragraph of poem.content">
+      <p *ngFor="let line of paragraph">{{ line }}</p>
+    </div>
+  </div>
+
+  <p class="likes">❤️ {{ poem.likes || 0 }}</p>
+</div>

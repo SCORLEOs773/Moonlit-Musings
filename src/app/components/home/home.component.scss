@@ -1,0 +1,130 @@
+.home {
+  color: #e0e0e0;
+  background-color: #0f0f0f;
+  padding: 2rem;
+
+  .hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: radial-gradient(ellipse at center, #1c1c1c, #000);
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background: #ffffff10;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+
+  .about {
+    max-width: 700px;
+    margin: 4rem auto;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .genres {
+    text-align: center;
+    margin: 4rem auto;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .genre-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+
+      .card {
+        position: relative;
+        width: 160px;
+        height: 100px;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 12px;
+        gap: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: white;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          color: #000;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          width: 80px;
+          height: 200px;
+          border-radius: 10px;
+          background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+          z-index: -10;
+          pointer-events: none;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+          transform: translate3d(0, 0, 0) scale(0.95);
+          filter: blur(20px);
+        }
+
+        &:hover::after {
+          filter: blur(30px);
+        }
+
+        &:hover::before {
+          transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+        }
+
+        .heading {
+          font-size: 20px;
+          text-transform: capitalize;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
