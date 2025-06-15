@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire/compat'; // Using compat since 
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { environment } from '../environments/environment';
+import { TypewriterLoaderComponent } from './components/shared/typewriter-loader/typewriter-loader.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
+    TypewriterLoaderComponent,
   ],
   imports: [
     BrowserModule,

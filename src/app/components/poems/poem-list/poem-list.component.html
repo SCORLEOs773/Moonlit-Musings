@@ -1,12 +1,16 @@
 <div class="poem-list">
   <h2>All Poems</h2>
 
-  <div *ngIf="poems.length === 0">Loading poems...</div>
+  <app-typewriter-loader
+    class="loader-wrapper"
+    *ngIf="poems.length === 0"
+  ></app-typewriter-loader>
 
   <div class="grid" *ngIf="poems.length > 0">
     <div
       class="poem-card"
       *ngFor="let poem of poems"
+      [ngStyle]="{ 'background-color': poem.cardColor }"
       [routerLink]="['/poem', poem.id]"
     >
       <h3>{{ poem.title }}</h3>

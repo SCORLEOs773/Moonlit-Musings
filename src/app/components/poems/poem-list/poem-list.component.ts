@@ -16,10 +16,27 @@ export class PoemListComponent implements OnInit {
       .list('poems')
       .snapshotChanges()
       .subscribe((snapshots) => {
-        this.poems = snapshots.map((snap) => ({
-          id: snap.key,
-          ...(snap.payload.val() as any),
-        }));
+        const pastelColors = [
+          '#4B5563', // cool gray
+          '#374151', // dark slate
+          '#1E3A8A', // indigo
+          '#065F46', // emerald
+          '#7C3AED', // violet
+          '#6B7280', // gray
+          '#0F172A', // dark blue-gray
+          '#1E293B', // dark slate blue
+          '#334155', // cool blue-gray
+        ];
+
+        this.poems = snapshots.map((snap) => {
+          const bgColor =
+            pastelColors[Math.floor(Math.random() * pastelColors.length)];
+          return {
+            id: snap.key,
+            ...(snap.payload.val() as any),
+            cardColor: bgColor,
+          };
+        });
       });
   }
 }
