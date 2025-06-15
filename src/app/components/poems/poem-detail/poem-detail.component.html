@@ -1,12 +1,21 @@
 <div class="poem-detail" *ngIf="poem">
-  <h2>{{ poem.title }}</h2>
-  <p class="genre">{{ poem.genre }}</p>
+  <div class="poem-card">
+    <div class="poem-header">
+      <div>
+        <h2 class="poem-title">{{ poem.title }}</h2>
+        <p class="poem-genre">{{ poem.genre }}</p>
+      </div>
+      <p class="poem-author">— Sukhad Sharma</p>
+    </div>
 
-  <div class="poem-content">
-    <div class="paragraph" *ngFor="let paragraph of poem.content">
-      <p *ngFor="let line of paragraph">{{ line }}</p>
+    <div class="poem-content">
+      <div class="paragraph" *ngFor="let paragraph of poem.content">
+        <p *ngFor="let line of paragraph" class="poem-line">{{ line }}</p>
+      </div>
+    </div>
+
+    <div class="poem-meta">
+      <p class="poem-likes">❤️ {{ poem.likes || 0 }} Likes</p>
     </div>
   </div>
-
-  <p class="likes">❤️ {{ poem.likes || 0 }}</p>
 </div>
