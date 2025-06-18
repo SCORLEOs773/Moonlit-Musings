@@ -132,7 +132,7 @@
 .about-me-section {
   padding: 4rem 2rem;
   background-color: #161616; // match dark theme
-  background: linear-gradient(to right, #111111, #1b1b1b);
+  background: linear-gradient(45deg, #000000, #0a0a2e);
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
 
@@ -143,6 +143,11 @@
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    padding-bottom: 3rem;
+  }
+
+  .about-visuals {
+    position: relative;
   }
 
   .about-image img {
@@ -151,6 +156,8 @@
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
   }
 
   .about-content {
@@ -164,7 +171,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 1rem;
       color: #cccccc;
@@ -185,4 +192,97 @@
       }
     }
   }
+}
+
+/* Enhanced Moon with Craters */
+.moon {
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  border-radius: 50%;
+  top: -50px;
+  left: -60px;
+  position: absolute;
+  box-shadow: 0 0 40px rgba(235, 235, 235, 0.5),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  z-index: 0;
+}
+
+/* Moon Craters */
+.crater {
+  position: absolute;
+  background: rgba(200, 200, 200, 0.3);
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cr1 {
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 40px;
+}
+.cr2 {
+  width: 30px;
+  height: 30px;
+  top: 45px;
+  left: 80px;
+}
+.cr3 {
+  width: 25px;
+  height: 25px;
+  top: 70px;
+  left: 45px;
+}
+
+.blub-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Enhanced Blubs (Falling Stars) */
+.blub {
+  height: calc(3px * var(--j));
+  width: calc(1px * var(--j));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(173, 216, 230, 1) 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 30px rgba(173, 216, 230, 0.6);
+  animation: animated linear infinite reverse;
+  animation-duration: calc(40s / var(--i));
+  rotate: 25deg;
+  opacity: 0.8;
+  filter: blur(calc(0.5px * var(--j)));
+}
+
+@keyframes animated {
+  0% {
+    transform: translateY(250px) scale(0.3) rotate(25deg);
+  }
+  100% {
+    transform: translate(1800px, -850px) scale(1.2) rotate(25deg);
+  }
+}
+
+/* Hover Effects */
+.card:hover .moon {
+  box-shadow: 0 0 60px rgba(173, 216, 230, 0.7),
+    inset -8px -8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #e0ffff, #ffffff);
+}
+
+.card:hover .blub {
+  animation-duration: calc(30s / var(--i));
+  opacity: 1;
 }
